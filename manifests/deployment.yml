@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "k8lab-afbf"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "k8lab-afbf"
+    spec:
+      containers:
+        - name: "k8lab-afbf"
+          image: "k8lab20.azurecr.io/k8lab"
+          ports:
+          - containerPort: 5433
